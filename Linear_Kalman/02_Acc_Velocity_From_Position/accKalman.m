@@ -5,16 +5,12 @@ persistent x
 persistent firstRun
 
 
-
-
-
-
 if (isempty(firstRun))
     dt = 0.02  ; 
     A = [1 dt 0.5*dt^2;0 1 dt;0 0 1] ;
     H = [1 0 0] ;
     %Q = [1 0 0;0 1 0;0 0 1];
-    Q = 1e-2*[dt^5/20 dt^4/8 dt^3/6;dt^4/8 dt^3/3 dt^2/2;dt^3/6 dt^2/2 dt];
+    Q = 10*[dt^5/20 dt^4/8 dt^3/6;dt^4/8 dt^3/3 dt^2/2;dt^3/6 dt^2/2 dt];
     R = 100 ;
     x = [0;0;0] ; %% Initial states
     P = eye(3)*5 ;
